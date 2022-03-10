@@ -16,5 +16,4 @@ if ynToTF(loop):
     clock = int(getinput("Enter TPM"))
 else:
     clock = 1
-link = "https://gitxhub.com/ee/game/raw/main/SkyBlade/"
 main(url=link, clock=clock, loop=ynToTF(loop))

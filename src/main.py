@@ -9,7 +9,7 @@ import time
 
 
 def gitx(url):
-        with open("./src/data/usrs/users.txt", "r") as usrs:
+        with open("./src/data/usrs/users.log", "r") as usrs:
             users = usrs.read().split("\n")
             #print(users)
     
@@ -49,7 +49,6 @@ def clockToArr(clock : int):
     while current < 60:
         current += rate
         ls.append(current)
-    print(ls)
     return ls
 
 
