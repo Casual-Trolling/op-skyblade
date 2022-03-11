@@ -1,41 +1,40 @@
 from src.lib.logger import logger as log
 from src.lib.logger import logusr 
 from src.lib.requester import GetReq as Scrape
-from src.lib.gitter import GetGit as Git
 import asyncio
 import time
 
 
 
 
-def gitx(url):
+def gitx(url, logusrnm):
         with open("./src/data/usrs/users.log", "r") as usrs:
             users = usrs.read().split("\n")
             #print(users)
+        try:
+            data = Scrape(url)
+        
     
-        data = Scrape(url)
-    
-        if data.isok:
-            try:
+            if data.isok:
                 giturl = data.url
-                gitdata = Scrape(giturl)
-            
-                if gitdata.isok and giturl not in users:
-                    log(f"active: {giturl}")
-                    logusr(giturl)
+                if data.usrname != None:
+                    gitdata = Scrape(giturl)
+        
+                    if not gitdata.gone and logusrnm and giturl not in users:
+                        logusr(giturl)
 
-                elif gitdata.isok:
-                    log(f"passing {giturl}")
+                    elif not gitdata.gone:
+                        log(f"passing {giturl}")
 
-                gitdata.cloesCon()
+                    gitdata.cloesCon()
+                    data.cloesCon()
+                    return giturl
+                log("request returned no links")
+            else:
+                log("Connection Refused")
                 data.cloesCon()
-                return giturl
-            except:
-                log("no links on site")
-        else:
-            log("Connection Refused")
-            data.cloesCon()
-
+        except:
+            log(f"request erroneus url ({url})")
 
 def clockToArr(clock : int):
     if clock == 0:
@@ -52,19 +51,19 @@ def clockToArr(clock : int):
     return ls
 
 
-def main(url : str, clock : int, loop : bool):
+def main(url : str, clock : int, loop : bool, logusrnm : bool):
     arr = clockToArr(clock)
     log(f"loading {url}")
     if loop:
         while True:
             timenow = time.localtime().tm_min
             if time.localtime().tm_min in arr:
-                gitx(url=url)
+                gitx(url=url, logusrnm=logusrnm)
                 while time.localtime().tm_min in arr:
                     time.sleep(1)
             else:
                 
                 time.sleep(1)
     else:
-        gitx(url=url)
+        gitx(url=url, logusrnm=logusrnm)
         
