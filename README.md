@@ -10,8 +10,8 @@ Info on how to install the script and how to run the script can be found below.
 ```txt
 pip install requests
 cd <project directory>
-git clone https://github.com/Casual-Trolling/git-scraper
-cd git-scraper
+git clone https://github.com/Casual-Trolling/url-scraper
+cd url-scraper
 py launcher.py
 ```
 
@@ -23,3 +23,6 @@ py launcher.py
 [--:--:--]: Enter TPM >> [how many times you want to check the url per min]
 [--:--:--]: Log  y/N? >> [do you want to log the data]
 ```
+
+
+*this file is licensed under the (MIT license)[]https://mit-license.org/]*
