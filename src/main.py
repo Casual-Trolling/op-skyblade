@@ -22,7 +22,7 @@ def gitx(url):
             
                 if gitdata.isok and giturl not in users:
                     log(f"active: {giturl}")
-                    logusr(url)
+                    logusr(giturl)
 
                 elif gitdata.isok:
                     log(f"passing {giturl}")
