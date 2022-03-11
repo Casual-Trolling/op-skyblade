@@ -10,10 +10,15 @@ def ynToTF(inp : str):
     else:
         return False
 
+with open("src/data/usrs/users.log", "a") as log:
+    pass
+
 link = getinput("Enter URL")
 loop  = getinput("Loop y/N?")
 if ynToTF(loop):
     clock = int(getinput("Enter TPM"))
 else:
     clock = 1
-main(url=link, clock=clock, loop=ynToTF(loop))
+willlog = getinput("Log  y/N?")
+
+main(url=link, clock=clock, loop=ynToTF(loop), logusrnm=ynToTF(willlog))
