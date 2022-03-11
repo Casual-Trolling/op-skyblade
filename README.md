@@ -25,4 +25,5 @@ py launcher.py
 ```
 
 
-*this file is licensed under the [MIT license](https://mit-license.org/)*
+*Licensed under the [MIT license](https://mit-license.org/)*
+*Any issues, feel free to ask for help.*
