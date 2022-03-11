@@ -1,7 +1,6 @@
 from src.lib.logger import logger as log
 from src.lib.logger import logusr 
 from src.lib.requester import GetReq as Scrape
-import asyncio
 import time
 
 
