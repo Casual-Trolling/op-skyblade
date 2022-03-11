@@ -3,7 +3,7 @@
 A HTML scraper that is designed to search for a github link in a websites HTML page.
 Originaly designed to check suspicious links and to monitor the means of distrobution of malware.
 You can run it once or set it up to scrape the html every X ammount of time.
-Info on how to install the script and how to run the script can be found below.
+Info on how to install the script and how to run the script can be found below, all files have been annotated.
 
 **setup**
 
@@ -26,4 +26,5 @@ py launcher.py
 
 
 *Licensed under the [MIT license](https://mit-license.org/)*
+
 *Any issues, feel free to ask for help.*
