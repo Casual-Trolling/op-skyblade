@@ -25,6 +25,6 @@ py launcher.py
 ```
 
 
-*Licensed under the [MIT license](https://mit-license.org/)*
+*Licensed under an **edited** version of the [DNBAD License](https://github.com/Casual-Trolling/url-scraper/blob/main/LICENSE)*
 
 *Any issues, feel free to ask for help.*
